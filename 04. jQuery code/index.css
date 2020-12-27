@@ -1,0 +1,10 @@
+body{
+    background-color: aqua;
+}
+
+.biggie{
+    font-size: 6rem;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}

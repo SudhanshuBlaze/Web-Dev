@@ -1,0 +1,204 @@
+#title {
+  background-color: #ff4c68;
+  color: white;
+}
+
+/* Title text */
+h1 {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.5;
+  /* Give same padding also to iphone image , hence it is a good practice to give bottom-padding instead to the Nav-Bar */
+  padding-top: 10%;
+  padding-bottom: 3%;
+}
+
+/* navbar and title */
+.container-fluid {
+  /* 3% padding to top-bottom(vertical) and 15% padding to left-right(horizontal) */
+  padding: 3% 15%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* tindog title */
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.nav-item {
+  padding: 0% 5%;
+  font-weight: 100;
+  /* font-size: 1.2rem; */
+}
+
+.navbar {
+  /* Removed the extra-padding which came with the Bootstrap Navbar-> to align it with header; */
+  padding: 0% 0%;
+}
+
+/* Download buttons */
+.download-btn {
+  /* margin-top: 5%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  margin-left: 0%; */
+  margin: 5% 3% 5% 0%;
+}
+
+/* Title Image */
+
+.title-img {
+  width: 60%;
+  /* Same padding was also given to title text */
+  /* padding-top: 10%; */
+  transform: rotate(25deg);
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+@media (max-width: 1100px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-img {
+    transform: rotate(0deg);
+  }
+}
+
+/*      Features    */
+
+#features {
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: white;
+}
+
+/* Feature heading */
+.feature-heading {
+  margin-top: 5%;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.fa-4x {
+  color: #ef8172;
+}
+
+.fa-4x:hover {
+  color: #ff4c68;
+}
+
+/* Compressing the features-text */
+.feature-text {
+  padding: 0% 7%;
+  color: #8f8f8f;
+  font-weight: 400;
+}
+
+/* < !-- Testimonials --> */
+
+#testimonials {
+  text-align: center;
+  background-color: #ef8172;
+  color: white;
+}
+
+/* Testimonial heading */
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.testimonial-img {
+  width: 10%;
+  border-radius: 100%;
+  margin-top: 20px;
+}
+
+/* < !-- Press --> */
+
+#press {
+  background-color: #ef8172;
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+
+  /* 20px from top , 20px from left and right and 50px from bottom */
+  margin: 20px 20px 50px;
+}
+
+/* It is done here because we want to add the padding only to the testimonial text and image and not on the entire section which also contains,
+as it is leading to compression of control buttons . */
+
+.carousel-item {
+  padding: 7% 15%;
+}
+
+/*           Pricing          */
+
+/* Dull text */
+.pricing-text {
+  color: gray;
+}
+
+/* Entire Pricing section */
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+
+/* Each pricing box */
+.price-column {
+  padding: 4% 2%;
+}
+
+/*            Call to Action */
+
+#cta {
+  text-align: center;
+  background-color: #ff4c68;
+  padding: 9% 10%;
+}
+
+.cta-text {
+  color: white;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 3.5rem;
+  padding-bottom: 4%;
+}
+
+.cta-btn {
+  margin: 2% 3% 2% 0%;
+}
+
+/*         Footer      */
+
+#footer {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  background-color: white;
+}
+
+/* Footer icons */
+.foot-icon {
+  margin-right: 1%;
+  margin-left: 1%;
+  font-weight: 600;
+  background-color: white;
+}
