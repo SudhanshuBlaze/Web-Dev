@@ -1,0 +1,22 @@
+
+@mixin flexCentre($direction,$bgColor) {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 50vh;
+ flex-direction: $direction;
+ background-color: $bgColor;
+}
+header {
+    @include flexCentre(column,lightBlue);
+    button {
+        //grabs the and affects the button inside the header
+        background-color: $primaryBtn;
+        border-radius: 30%;
+        width: 5%;
+
+        &:hover {
+            background-color: darkorchid;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import "./variables";
+@import "./header" ;  // we can just import it from another place. This makes the code look cleaner
+// header button{
+//     color:$primaryBtn;
+//     border-radius: 30%;
+//     width: 5%;
+// }
+div {
+    @include flexCentre(row,rgb(252, 79, 79));
+    color: $textColor;
+    button{
+        background-color: $primaryBtn;
+        color: $textColor;
+    }
+}
+.contact{
+    @extend header;     //inherits all the content from the header
+    background-color: coral;  //override the inherited feature
+    width: 100%-20%;    // we can do arithmetic calculations like + - * /
+    margin-left: 10%;
+}
