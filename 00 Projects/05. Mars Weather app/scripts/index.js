@@ -6,7 +6,7 @@
 // const API_KEY="DEMO_KEY"  //key for the demo API
 const API_KEY="M32pJ3klXcICg727y5C6ynm0wT5bhSSsFxPdauA7"
 const API_URL=`https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`
-// console.log(API_URL);
+console.log(API_URL);
 
 
 
@@ -43,7 +43,7 @@ getWeather()
         selectedSolIndex=sols.length-1;
         displaySelectedSols(sols);
         displayPreviousSols(sols);
-        console.log(sols);
+        // console.log(sols);
 
         displaySelectedSols(sols);
         displayPreviousSols(sols);
@@ -117,7 +117,7 @@ function displayPreviousSols(sols) {
 function displayDate(date){
     return date.toLocaleDateString(
         undefined,  // converts the timezone to the timezone being used by browser(auto)
-        {   day: "2-digit",
+        {   day: "numeric",
             month: "long"
         }
     )
@@ -128,12 +128,13 @@ function getWeather(){
         .then(res =>res.json())  // Converts the response to json and returns it.
         .then(data => {
             //Destructuring Data into separate Variables.
+            console.log(data);
             const{
                 sol_keys,
                 validity_checks,
                 ...solData    // "..." symbol is used to store Rest(remaining) of the data.
             }=data;
-            console.log(solData);   //prints the solData(The imp data we require)
+            // console.log(solData);   //prints the solData(The imp data we require)
             //Iterating over values of each array using "map" 
             //and creating a new object with required data and returning it
             return Object.entries(solData).map(([sol,data])=>{
