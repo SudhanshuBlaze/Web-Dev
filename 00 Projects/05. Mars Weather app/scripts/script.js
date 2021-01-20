@@ -41,8 +41,6 @@ getWeather()
     .then(sols=> {
         // selectedSolIndex= sols.length-1; displays last/latest sol
         selectedSolIndex=sols.length-1;
-        displaySelectedSols(sols);
-        displayPreviousSols(sols);
         // console.log(sols);
 
         displaySelectedSols(sols);
@@ -86,6 +84,15 @@ function displaySelectedSols(sols) {
     // console.log(selectedSol)
 }
 
+function displayDate(date){
+    return date.toLocaleDateString(
+        undefined,  // converts the timezone to the timezone being used by browser(auto)
+        {   day: "numeric",
+            month: "long"
+        }
+    )
+}
+
 function displayTemperature(temperature) {
     let returnTemp=temperature;
     if(!isMetric())
@@ -113,14 +120,6 @@ function displayPreviousSols(sols) {
         })
         previousSolContainer.appendChild(solContainer);   //add a new child to the empty container
     });
-}
-function displayDate(date){
-    return date.toLocaleDateString(
-        undefined,  // converts the timezone to the timezone being used by browser(auto)
-        {   day: "numeric",
-            month: "long"
-        }
-    )
 }
 
 function getWeather(){
