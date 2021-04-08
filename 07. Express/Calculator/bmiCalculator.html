@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<h1>BMI Calculator</h1>
+
+<body>
+    <!-- Forms POSTS the code below to "/" current path as action is "/", by default if we don't provide action attribute, then action="/", which means current path -->
+    <form action="/bmiCalculator" method="POST">
+        <!-- name attribute is really important here to grab the variable after parsing -->
+        <input type="text" name="height" placeholder="Enter height">
+        <input type="text" name="weight" placeholder="Enter weight">
+        <button type="submit" name="submit">Calculate</button>
+    </form>
+</body>
+
+</html>
