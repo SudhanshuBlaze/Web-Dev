@@ -3,7 +3,7 @@ const express=require("express");
 const https=require("https");
 const app=express();
 
-app.use(express.static("public"));
+app.use(express.static("public"));   //public folder contains css files and etc.
 app.use(express.urlencoded({ extended: true })); //body-parser
 
 app.get("/",(req, res)=>{
@@ -15,7 +15,7 @@ app.post("/",(req,res)=>{
     const firstName=parsedData.firstName;
     const lastName=parsedData.lastName;
     const email=parsedData.email;
-// API reference: https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/
+    // API reference: https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/
 
     const userData ={
         members: [  //single object in an array as we will we subscribing one person at a time
@@ -34,7 +34,7 @@ app.post("/",(req,res)=>{
     const url= "https://us1.api.mailchimp.com/3.0/lists/a2e5a69d08"
     const options={
         method: "POST",
-        auth:"SudhanshuBlaze:66bf0bfeca7ee46bdae52f7e8ac5095e-us1"
+        auth:"SudhanshuBlaze:66bf0bfeca7ee46bdae52f7e8ac5095e-us1"  //api-key
     }
 
     const request=https.request(url, options, (response)=>{
@@ -50,7 +50,7 @@ app.post("/",(req,res)=>{
         })
     })
 
-    request.status
+    request.status   // status code
     request.write(jsonData);
     request.end();
     
