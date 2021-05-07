@@ -1,0 +1,22 @@
+<%- include('header'); -%>
+
+<div class="box" id="heading">
+    <h1> It's <%= listTitle %> !</h1>
+</div>
+
+<div class="box">
+    <% for(var i=0;i<newItem.length;i++){%>
+    <div class="item">
+        <!-- line through all paragraph elements after <input> -->
+        <input type="checkbox">
+        <p> <%= newItem[i]%> </p>
+    </div>
+    <% } %>
+    <!-- Our form posts in "/" route -->
+    <form class="item" action="/" method="post">
+        <input name="newItem" type="text" placeholder="New Item" autocomplete="off">
+        <button type="submit" value=<%= listTitle %> name="list">+</button>
+    </form>
+</div>
+
+<%- include('footer'); -%>
