@@ -1,0 +1,22 @@
+<%- include('partials/header'); %>
+
+<h1>Home</h1>
+<p> <%= home %> </p>
+
+<% for(let i=0;i<posts.length;i++){   %>
+
+<h3> <%=posts[i].postTitle %> </h3>
+
+<!-- Show first 100 characters in the home screen -->
+<p> <%=posts[i].postBody.substring(0,100) %>...
+
+    <a href="posts/<%= posts[i].postTitle %> ">Read More</a>
+
+    <%  //let route="posts/"+posts[i].postTitle %>
+    <!-- <a href=<%=//route%>>Read More</a> -->
+
+    <!-- <a href=<%=//"posts/"+posts[i].postTitle %>>Read More</a> -->
+</p>
+<% } %>
+
+<%- include("partials/footer"); %>
