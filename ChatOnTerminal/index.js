@@ -1,10 +1,8 @@
 const port= process.env.PORT || 3000;
 const chalk = require('chalk');
-const express = require('express');
-const app = express();
 
 const socket = require("socket.io-client")("http://localhost:3000");
-const http = require('http').createServer(app);
+const http = require('http').createServer();
 const io = require('socket.io')(http);
 
 
