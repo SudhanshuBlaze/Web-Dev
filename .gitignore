@@ -1,4 +1,4 @@
-
+node_modules
 *.mp4
 *.srt
 .DS_Store
