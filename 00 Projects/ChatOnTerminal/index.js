@@ -1,7 +1,7 @@
-const port= process.env.PORT || 3000;
+const PORT= process.env.PORT || 3000;
 const chalk = require('chalk');
 
-const socket = require("socket.io-client")("http://localhost:3000");
+const socket = require("socket.io-client");//("http://localhost:3000");
 const http = require('http').createServer();
 const io = require('socket.io')(http);
 
@@ -53,5 +53,5 @@ io.on('connection', function (socket) {
 
 
 http.listen(port, function() {
-  console.log('listening on 3000');
+  console.log(`listening on ${PORT}`);
 });

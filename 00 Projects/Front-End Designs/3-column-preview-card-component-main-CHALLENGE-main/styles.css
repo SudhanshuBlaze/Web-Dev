@@ -1,0 +1,86 @@
+h1{
+    font-family: 'Big Shoulders Display';
+    font-style: italic;
+    font-weight:700;  /* same as bold */
+    color: hsl(0, 0%, 95%);
+    font-size: 3rem;
+}
+
+p{
+    font-family: 'Lexend Deca', sans-serif;
+    /*SAME AS: color: white , opacity: 0.75*/
+    color: hsla(0, 0%, 100%, 0.75);  
+    line-height: 1.8;
+}
+
+button{
+    border-radius:30px;
+    padding:20px 25px;  /*top,right,bottom left or (top,bottom),(right,left) */
+    border:0;   /*remove border from buttons*/
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight:400;
+    background-color: hsl(0, 0%, 95%);
+}
+
+.button-1{
+    color: hsl(31, 77%, 52%);
+}
+
+.button-2{
+    color: hsl(184, 100%, 22%);
+}
+
+.button-3{
+    color: hsl(179, 100%, 13%);
+}
+
+.main-container{
+    padding: 80px 15px 80px 15px;
+}
+
+.container-1 ,.container-2 ,.container-3{
+   padding: 50px 45px 50px 45px;
+}
+
+.container-1{
+    background-color: hsl(31, 77%, 52%);
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.container-2{
+    background-color: hsl(184, 100%, 22%);
+   
+}
+
+.container-3{
+    background-color: hsl(179, 100%, 13%);
+    border-radius: 0 0 10px 10px;
+}
+
+/*On screens that are greater than equal to 703px ->desktop design */
+@media screen and (min-width:703px) {
+
+   .main-container{
+       display: flex;
+       margin: 0 auto;
+       max-width: 1024px;
+       background-color: aqua;
+   }
+   .container-1, .container-2 , .container-3{    
+    display: flex;
+    flex-direction: column;   /*by default: row-wise*/
+    justify-content: space-between;
+    align-items: flex-start;
+} 
+    .container-1{
+        border-radius: 10px 0 0 10px;
+    }
+    .container-3{
+        border-radius: 0 10px 10px 0;
+    }
+    
+    button{
+        margin-top: 80px; 
+    } 
+}
