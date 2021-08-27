@@ -21,16 +21,16 @@ const fruitSchema = new mongoose.Schema({
     review: String
 });
 //This is our model using which documents(json data) are created 
+//note in the collection it makes the "Fruit" plural -> "fruits" 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
 //create a document using our Fruit model this will stick to the fruitSchema
-//note in the collection it makes the "fruit" plural -> "fruits" 
-const fruit = new Fruit({
+const apple = new Fruit({
     name: "apple",
     rating: 2,
     review: "okay fruit"
 });
-// fruit.save() ;
+// apple.save() ;
 
 const personSchema=mongoose.Schema({
     name: String,
