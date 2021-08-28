@@ -1,0 +1,4 @@
+mongod --config /etc/mongod.conf
+mongod -f /etc/mongod.conf
+
+sudo pkill -f mongod
