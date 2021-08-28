@@ -1,26 +1,54 @@
-//jshint esversion:6
-
 const express = require("express");
-const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
+const mongoose=require("mongoose");
 
 const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true })); //body-parser
 app.use(express.static("public"));
 
-const items = ["Buy Food", "Cook Food", "Eat Food"];
-const workItems = [];
+connect().catch(err=>console.log(err));
+async function connect() {
+  await mongoose.connect("mongodb://localhost:27017/todolistDB", 
+  {useNewUrlParser: true, useUnifiedTopology: true});
+};
+
+const itemSchema =new mongoose.Schema({ 
+  name: String
+});
+const Item= mongoose.model("Item",itemSchema); 
+// create dummy items
+const item1=new Item({
+  name: "Practice DSA"
+});
+const item2=new Item({
+  name: "Build Projects"
+});
+const item3=new Item({
+  name: "Do Internship"
+});
+
+async function insertDummy() {
+  const res= await Item.insertMany([item1,item2,item3]);
+  console.log(res);
+}
 
 app.get("/", function(req, res) {
+  const day = date.getDate();
 
-const day = date.getDate();
+  display().catch(err=> console.log(err))
+  async function display() {
+    const foundItems= await Item.find({});
+    
+    if(foundItems.length===0)
+      insertDummy().catch(err=>console.log(err));
 
-  res.render("list", {listTitle: day, newListItems: items});
-
+    res.render("list", {listTitle: day, newListItems: foundItems});
+  }
 });
+
 
 app.post("/", function(req, res){
 
@@ -29,7 +57,7 @@ app.post("/", function(req, res){
   if (req.body.list === "Work") {
     workItems.push(item);
     res.redirect("/work");
-  } else {
+  } else { 
     items.push(item);
     res.redirect("/");
   }

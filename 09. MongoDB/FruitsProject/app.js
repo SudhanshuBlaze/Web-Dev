@@ -74,7 +74,7 @@ const person =new Person({
 //     await Fruit.insertMany([{
 //         name: "Guava",
 //         rating:6,
-//         review:"Nice"
+//         review:"Nice" 
 //     }])
 //     console.log("Data inserted");
 // }
@@ -116,7 +116,7 @@ const person =new Person({
 display().catch(err => console.log(err));
 async function display() {
     const fruits=await Fruit.find();
-
+    mongoose.connection.close();
     fruits.forEach(fruit=>{
         console.log(fruit);
     })
