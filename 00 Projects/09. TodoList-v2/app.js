@@ -13,7 +13,8 @@ app.use(express.static("public"));
 
 connect().catch(err=>console.log("Could not connect"+err));
 async function connect(){
-  await mongoose.connect("mongodb://localhost:27017/todolistDB", 
+  await mongoose.connect(
+    "mongodb+srv://admin-Sudhanshu:dEInzbP7mFedyL2M@todocluster.byrl4.mongodb.net/todolistDB?retryWrites=true&w=majority", 
   {useNewUrlParser: true, useUnifiedTopology: true})
 }
 
