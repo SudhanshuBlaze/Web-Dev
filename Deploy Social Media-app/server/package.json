@@ -1,0 +1,24 @@
+{
+  "name": "social-media-merng",
+  "version": "1.0.0",
+  "description": "A social media web-app using MERNG stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "serve": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "SudhanshuBlaze",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "graphql": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.7"
+  }
+}
